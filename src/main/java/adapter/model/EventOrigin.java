@@ -3,15 +3,15 @@ package adapter.model;
 import java.util.UUID;
 
 @SuppressWarnings("WeakerAccess")
-public class EventOrigin {
+class EventOrigin {
     private UUID id;
     private String type;
     private String content;
 
-    public EventOrigin() {
+    EventOrigin() {
     }
 
-    public EventOrigin(UUID id, String type, String content) {
+    EventOrigin(UUID id, String type, String content) {
         this.id = id;
         this.type = type;
         this.content = content;

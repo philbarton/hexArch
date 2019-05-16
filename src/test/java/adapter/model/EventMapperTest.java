@@ -1,7 +1,5 @@
-package adapter;
+package adapter.model;
 
-import adapter.model.EventMapper;
-import adapter.model.EventOrigin;
 import business.model.Event;
 import org.junit.Test;
 

@@ -11,7 +11,7 @@ public class CLIChangeEvent {
 
     public static void main(String[] args) {
         UUID id = UUID.randomUUID();
-        String type = "bad";
+        String type = "create";
         String content = "some content";
 
         EventOrigin origin = new EventOrigin(id, type, content);

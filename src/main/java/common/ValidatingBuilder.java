@@ -14,7 +14,8 @@ public abstract class ValidatingBuilder {
     protected Event validate(Event event) {
         Set<ConstraintViolation<Event>> violations = Validation.buildDefaultValidatorFactory().getValidator().validate(event);
         if (!violations.isEmpty()) {
-            violations.forEach(violation -> LOG.warn(violation.getMessage()));
+            violations.forEach(violation -> LOG.warn("Class : {}, Property : {}, Violation : {}",
+                    violation.getRootBeanClass(), violation.getPropertyPath(), violation.getMessage()));
             throw new IllegalArgumentException(violations.toString());
         }
         return event;

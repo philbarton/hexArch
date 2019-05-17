@@ -1,1 +1,1 @@
-Shared adapter code against different adapter implementations
+Shared adapter code used by the different adapter implementations

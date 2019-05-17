@@ -1,0 +1,1 @@
+Shared adapter code against different adapter implementations

@@ -1,0 +1,1 @@
+Pure business logic, defined by the port interfaces

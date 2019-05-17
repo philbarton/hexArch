@@ -15,6 +15,7 @@
     </modules>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jackson.version>2.9.8</jackson.version>
         <validator.version>6.0.16.Final</validator.version>
         <javax.el.version>3.0.1-b09</javax.el.version>

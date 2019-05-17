@@ -6,7 +6,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
-import port.StateChangeDrivenPort;
+import application.port.StateChangeDrivenPort;
 
 import java.util.UUID;
 

@@ -8,7 +8,7 @@ import java.io.IOException;
 import static adapter.model.EventSerDe.deserialise;
 
 /**
- * A command line driver adapter
+ * A command line driver adapter example
  */
 public class CliDriverAdapter {
 

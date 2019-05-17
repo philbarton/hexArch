@@ -1,6 +1,5 @@
-package common;
+package application.domain;
 
-import application.domain.Event;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,10 +10,10 @@ import java.util.Set;
 /**
  * Base class for adding validation to Builders
  */
-public abstract class ValidatingBuilder {
+abstract class ValidatingBuilder {
     private static final Logger LOG = LoggerFactory.getLogger(ValidatingBuilder.class);
 
-    protected Event validate(Event event) {
+    Event validate(Event event) {
         Set<ConstraintViolation<Event>> violations = Validation.buildDefaultValidatorFactory().getValidator().validate(event);
         if (!violations.isEmpty()) {
             violations.forEach(violation -> LOG.warn("Class : {}, Property : {}, Violation : {}",

@@ -6,7 +6,12 @@
 
     <groupId>uk.gov.homeoffice</groupId>
     <artifactId>hexArch</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>application</module>
+        <module>adapter_cli</module>
+    </modules>
 
     <properties>
         <jackson.version>2.9.8</jackson.version>

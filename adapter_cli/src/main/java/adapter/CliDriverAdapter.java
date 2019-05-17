@@ -16,11 +16,14 @@ import static adapter.model.EventSerDe.deserialise;
  */
 public class CliDriverAdapter {
     private static final Logger LOG = LoggerFactory.getLogger(StdOutDrivenAdapter.class);
+    private ChangeEventDriverPort eventDriverPort;
+
+    private CliDriverAdapter() {
+        eventDriverPort = DaggerAppComponent.builder().build().getChangeEventDriverPort();
+    }
 
     @SuppressWarnings("WeakerAccess")
     public void run() {
-
-        ChangeEventDriverPort eventDriverPort = DaggerAppComponent.builder().build().getChangeEventDriverPort();
 
         try {
 

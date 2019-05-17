@@ -2,6 +2,6 @@ package port;
 
 import application.domain.Event;
 
-public interface ChangeEventIn {
+public interface ChangeEventDriverPort {
     void receiveEvent(Event event);
 }

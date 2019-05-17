@@ -4,8 +4,16 @@ import common.ValidatingBuilder;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.Objects;
 import java.util.UUID;
 
+/**
+ *
+ * Domain object.
+ * Can only be constructed through builder.
+ * Build performs validation using JSR 380 annotations.
+ *
+ */
 public class Event {
 
     @NotNull
@@ -39,9 +47,34 @@ public class Event {
         return content;
     }
 
+    @Override
+    public String toString() {
+        return "Event {" +
+                "id=" + id +
+                ", type='" + type + '\'' +
+                ", content='" + content + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Event event = (Event) o;
+        return Objects.equals(id, event.id) &&
+                Objects.equals(type, event.type) &&
+                Objects.equals(content, event.content);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, type, content);
+    }
+
     public static class EventBuilder extends ValidatingBuilder {
         private UUID id;
         private String type;
+
         private String content;
 
         public EventBuilder id(UUID id) {
@@ -58,18 +91,9 @@ public class Event {
             this.content = content;
             return this;
         }
-
         public Event create() throws IllegalArgumentException {
             return validate(new Event(this));
         }
-    }
 
-    @Override
-    public String toString() {
-        return "Event {" +
-                "id=" + id +
-                ", type='" + type + '\'' +
-                ", content='" + content + '\'' +
-                '}';
     }
 }

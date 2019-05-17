@@ -4,12 +4,15 @@ import application.domain.Event;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import port.StateChangeEventOut;
+import port.StateChangeDrivenPort;
 
 import static adapter.model.EventSerDe.serialise;
 
-public class StdOutStateChangeEvent implements StateChangeEventOut {
-    private static final Logger LOG = LoggerFactory.getLogger(StdOutStateChangeEvent.class);
+/**
+ * A standard out driven adapter
+ */
+public class StdOutDrivenAdapter implements StateChangeDrivenPort {
+    private static final Logger LOG = LoggerFactory.getLogger(StdOutDrivenAdapter.class);
 
     @Override
     public void sendEvent(Event event) {

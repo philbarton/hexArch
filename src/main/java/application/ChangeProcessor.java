@@ -3,14 +3,14 @@ package application;
 import application.domain.Event;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import port.ChangeEventIn;
-import port.StateChangeEventOut;
+import port.ChangeEventDriverPort;
+import port.StateChangeDrivenPort;
 
-public class ChangeProcessor implements ChangeEventIn {
+public class ChangeProcessor implements ChangeEventDriverPort {
     private static final Logger LOG = LoggerFactory.getLogger(ChangeProcessor.class);
-    private StateChangeEventOut changeEventOut;
+    private StateChangeDrivenPort changeEventOut;
 
-    public ChangeProcessor(StateChangeEventOut changeEventOut) {
+    public ChangeProcessor(StateChangeDrivenPort changeEventOut) {
         this.changeEventOut = changeEventOut;
     }
 

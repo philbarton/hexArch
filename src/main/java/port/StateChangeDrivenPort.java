@@ -2,6 +2,6 @@ package port;
 
 import application.domain.Event;
 
-public interface StateChangeEventOut {
+public interface StateChangeDrivenPort {
     void sendEvent(Event event);
 }

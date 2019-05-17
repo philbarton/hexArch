@@ -16,7 +16,10 @@ public class EventMapperTest {
         String type = "create";
         String content = "some content";
 
-        EventOrigin origin = new EventOrigin(id, type, content);
+        EventOrigin origin = new EventOrigin();
+        origin.id = id;
+        origin.type = type;
+        origin.content = content;
 
         Event event = EventMapper.INSTANCE.fromEventOriginToEvent(origin);
 
@@ -39,8 +42,8 @@ public class EventMapperTest {
 
         EventOrigin origin = EventMapper.INSTANCE.fromEventToEventOrigin(event);
 
-        assertThat(origin.getId(), is(id));
-        assertThat(origin.getType(), is(type));
-        assertThat(origin.getContent(), is(content));
+        assertThat(origin.id, is(id));
+        assertThat(origin.type, is(type));
+        assertThat(origin.content, is(content));
     }
 }

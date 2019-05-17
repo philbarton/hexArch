@@ -7,10 +7,13 @@ import java.io.IOException;
 
 import static adapter.model.EventSerDe.deserialise;
 
-public class CLIChangeEvent {
+/**
+ * A command line driver adapter
+ */
+public class CliDriverAdapter {
 
     public static void main(String[] args) throws IOException {
-        ChangeProcessor changeProcessor = new ChangeProcessor(new StdOutStateChangeEvent());
+        ChangeProcessor changeProcessor = new ChangeProcessor(new StdOutDrivenAdapter());
 
         String jsonOrigin = "{\"id\":\"43f4dc59-fc95-4255-adf8-6f4ab7a35819\",\"type\":\"create\",\"content\":\"some content\"}";
 

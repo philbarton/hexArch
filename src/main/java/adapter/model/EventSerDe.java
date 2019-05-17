@@ -6,6 +6,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 
+/**
+ * SerDe for json to domain object.
+ */
 public class EventSerDe {
     private static ObjectMapper objectMapper = new ObjectMapper();
 

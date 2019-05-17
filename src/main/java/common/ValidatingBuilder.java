@@ -8,6 +8,9 @@ import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import java.util.Set;
 
+/**
+ * Base class for adding validation to Builders
+ */
 public abstract class ValidatingBuilder {
     private static final Logger LOG = LoggerFactory.getLogger(ValidatingBuilder.class);
 

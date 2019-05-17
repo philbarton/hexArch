@@ -9,20 +9,22 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>adapter_cli</artifactId>
+    <artifactId>adapter</artifactId>
 
     <dependencies>
-        <dependency>
-            <artifactId>adapter</artifactId>
-            <groupId>uk.gov.homeoffice</groupId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
         <dependency>
             <artifactId>application</artifactId>
             <groupId>uk.gov.homeoffice</groupId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
@@ -33,6 +35,6 @@
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
+
 </project>

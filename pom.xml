@@ -11,6 +11,7 @@
     <modules>
         <module>application</module>
         <module>adapter_cli</module>
+        <module>adapter</module>
     </modules>
 
     <properties>

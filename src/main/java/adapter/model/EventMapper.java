@@ -1,6 +1,6 @@
 package adapter.model;
 
-import business.model.Event;
+import application.domain.Event;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

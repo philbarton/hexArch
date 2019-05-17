@@ -1,6 +1,6 @@
 package other;
 
-import business.model.Event;
+import application.domain.Event;
 import org.junit.Test;
 
 import java.util.UUID;

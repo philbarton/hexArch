@@ -1,4 +1,4 @@
-package business.model;
+package application.domain;
 
 import common.ValidatingBuilder;
 
@@ -62,5 +62,14 @@ public class Event {
         public Event create() throws IllegalArgumentException {
             return validate(new Event(this));
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Event {" +
+                "id=" + id +
+                ", type='" + type + '\'' +
+                ", content='" + content + '\'' +
+                '}';
     }
 }

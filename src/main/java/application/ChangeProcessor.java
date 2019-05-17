@@ -1,6 +1,6 @@
-package business;
+package application;
 
-import business.model.Event;
+import application.domain.Event;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import port.ChangeEventIn;
@@ -16,7 +16,7 @@ public class ChangeProcessor implements ChangeEventIn {
 
     @Override
     public void receiveEvent(Event event) {
-        LOG.info("Event : {}", event.getId());
+        LOG.info(event.toString());
         changeEventOut.sendEvent(event);
     }
 

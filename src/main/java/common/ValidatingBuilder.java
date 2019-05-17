@@ -1,6 +1,6 @@
 package common;
 
-import business.model.Event;
+import application.domain.Event;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

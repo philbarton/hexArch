@@ -1,6 +1,6 @@
 package port;
 
-import business.model.Event;
+import application.domain.Event;
 
 public interface ChangeEventIn {
     void receiveEvent(Event event);

@@ -1,7 +1,7 @@
 package adapter;
 
-import business.ChangeProcessor;
-import business.model.Event;
+import application.ChangeProcessor;
+import application.domain.Event;
 
 import java.io.IOException;
 

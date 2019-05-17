@@ -1,6 +1,8 @@
 package application;
 
 import application.domain.Event;
+import application.port.UnableToReceiveException;
+import application.port.UnableToSendException;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -25,7 +27,7 @@ public class ChangeProcessorTest {
     }
 
     @Test
-    public void coreTest() {
+    public void coreTest() throws UnableToReceiveException, UnableToSendException {
         UUID id = UUID.randomUUID();
         String type = "create";
         String content = "some content";

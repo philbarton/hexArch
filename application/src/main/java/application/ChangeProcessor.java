@@ -13,9 +13,14 @@ public class ChangeProcessor implements ChangeEventDriverPort {
     }
 
     @Override
-    public void receiveEvent(Event event) {
+    public void receiveEvent(Event event) throws UnableToReceiveException {
         LOG.info(event.toString());
-        changeEventOut.sendEvent(event);
+        try {
+            changeEventOut.sendEvent(event);
+        } catch (UnableToSendException e) {
+            LOG.error(e.getMessage());
+            throw new UnableToReceiveException(e.getMessage());
+        }
     }
 
 }

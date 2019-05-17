@@ -1,9 +1,9 @@
 package configure;
 
-import adapter.CliDriverAdapter;
+import application.port.ChangeEventDriverPort;
 import dagger.Component;
 
 @Component(modules = AppModule.class)
 public interface AppComponent {
-    CliDriverAdapter getCliDriverAdapter();
+    ChangeEventDriverPort getChangeEventDriverPort();
 }

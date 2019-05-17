@@ -7,7 +7,6 @@ import configure.DaggerAppComponent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.inject.Inject;
 import java.io.IOException;
 
 import static adapter.model.EventSerDe.deserialise;
@@ -17,15 +16,12 @@ import static adapter.model.EventSerDe.deserialise;
  */
 public class CliDriverAdapter {
     private static final Logger LOG = LoggerFactory.getLogger(StdOutDrivenAdapter.class);
-    private ChangeEventDriverPort eventDriverPort;
-
-    @Inject
-    public CliDriverAdapter(ChangeEventDriverPort stateChangeDrivenPort) {
-        eventDriverPort = stateChangeDrivenPort;
-    }
 
     @SuppressWarnings("WeakerAccess")
     public void run() {
+
+        ChangeEventDriverPort eventDriverPort = DaggerAppComponent.builder().build().getChangeEventDriverPort();
+
         try {
 
             String jsonOrigin = "{\"id\":\"43f4dc59-fc95-4255-adf8-6f4ab7a35819\",\"type\":\"create\",\"content\":\"some content\"}";
@@ -40,7 +36,7 @@ public class CliDriverAdapter {
     }
 
     public static void main(String[] args) {
-        CliDriverAdapter driverAdapter = DaggerAppComponent.builder().build().getCliDriverAdapter();
+        CliDriverAdapter driverAdapter = new CliDriverAdapter();
         driverAdapter.run();
     }
 }
